@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Main from "./components/Main";
 import SelectedAddress from "./components/SelectedAddress";
 import SelectedRooms from "./components/SelectedRooms";
+import Map from "./components/Map";
 export const AppContext = createContext(null);
 const App = () => {
   const [houseData, setHouseData] = useState([]);
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/real-estate" element={<Main />}></Route>
         <Route path="/selected-address" element={<SelectedAddress />}></Route>
         <Route path="/selected-rooms" element={<SelectedRooms />}></Route>
+        <Route path="/map" element={<Map />}></Route>
       </Routes>
     </AppContext.Provider>
   );
