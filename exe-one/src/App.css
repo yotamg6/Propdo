@@ -1,3 +1,6 @@
+body {
+  background: url("skyscrapers.jpg") no-repeat center center fixed;
+}
 .App {
   text-align: center;
 }
@@ -28,15 +31,7 @@
   color: #61dafb;
 }
 
-/* #map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-} */
-
 .map-container {
-  /* height: 400px; */
   height: 100rem;
 }
 
@@ -53,9 +48,9 @@
   border-radius: 4px;
 }
 
-.latitudeBar {
-  /* background-color: rgba(35, 55, 75, 0.9); */
-  color: black;
+.latitudeLabel {
+  background-color: rgba(35, 55, 75, 0.9);
+  color: #fff;
   padding: 6px 12px;
   font-family: monospace;
   z-index: 1;
@@ -66,25 +61,48 @@
   border-radius: 4px;
 }
 
-.longitudeBar {
+.latitudeBar {
   /* background-color: rgba(35, 55, 75, 0.9); */
   color: black;
   padding: 6px 12px;
   font-family: monospace;
   z-index: 1;
   position: absolute;
-  top: 30px;
+  top: 20px;
+  right: 0;
+  margin: 12px;
+  border-radius: 4px;
+}
+
+.longitudeLabel {
+  background-color: rgba(35, 55, 75, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  font-family: monospace;
+  z-index: 1;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  margin: 12px;
+  border-radius: 4px;
+}
+.longitudeBar {
+  color: black;
+  padding: 6px 12px;
+  font-family: monospace;
+  z-index: 1;
+  position: absolute;
+  top: 90px;
   right: 0;
   margin: 12px;
   border-radius: 4px;
 }
 .btn {
-  /* color: black; */
   padding: 3px 6px;
   font-family: monospace;
   z-index: 1;
   position: absolute;
-  top: 70px;
+  top: 130px;
   right: 0;
   margin: 6px;
   border-radius: 4px;
