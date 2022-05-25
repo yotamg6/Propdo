@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AppContext } from "../App";
-import { Card, CardContent, Typography, Grid } from "@mui/material";
+import { Card, CardContent, Typography, Grid, Button } from "@mui/material";
 import AddressSearch from "./AddressSearch";
 import RoomSearch from "./RoomSearch";
 let counter = 0;
@@ -82,6 +83,14 @@ const Main = () => {
         />
         <AddressSearch />
         <RoomSearch />
+        <Button
+          variant="contained"
+          style={{ margin: "10px" }}
+          component={Link}
+          to="/map"
+        >
+          To maps
+        </Button>
       </Grid>
       <Grid
         alignItems="center"

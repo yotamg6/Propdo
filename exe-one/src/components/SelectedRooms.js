@@ -102,7 +102,12 @@ const SelectedRooms = () => {
                     </CardContent>
                   </Card>
                 </Grid>
-              ) : null;
+              ) : (
+                <div>
+                  We are sorry, there are currently no available apartments with
+                  the number of rooms you have stated
+                </div>
+              );
             })
           : null}
         <Button variant="contained" component={Link} to="/real-estate">
