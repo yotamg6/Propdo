@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-
+import transactions from "../transactions.json";
 import { AppContext } from "../App";
 import { TextField, Box, MenuItem } from "@mui/material";
 
@@ -22,9 +22,9 @@ const AddressSearch = () => {
 
   useEffect(() => {
     const getTrans = async () => {
-      const response = await fetch("http://localhost:3000//transactions.json");
-      const trans = await response.json();
-      const jsonAdjusted = JSON.parse(trans.replace(/\bNaN\b/g, "null"));
+      // const response = await fetch("http://localhost:3000//transactions.json");
+      // const trans = await response.json();
+      const jsonAdjusted = JSON.parse(transactions.replace(/\bNaN\b/g, "null"));
       const parsed = JSON.parse(JSON.stringify(jsonAdjusted));
       const sortedByPrice = parsed.properties.sort((a, b) => a.price - b.price);
       setHouseData(sortedByPrice);
