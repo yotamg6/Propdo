@@ -46,70 +46,70 @@ const SelectedRooms = () => {
             margin: "10px",
           }}
         />
-        {selectedNumOfRooms.length
-          ? selectedNumOfRooms.map((house, index) => {
-              counter % 5 === 0 ? (counter = 1) : counter++;
-              return house.address ? (
-                <Grid key={index} sx={{ m: 1 }}>
-                  <Card sx={{ minWidth: 275, backgroundColor: colors[index] }}>
-                    <img
-                      src={`/Images/prop${counter}.jpg`}
-                      style={{ height: "100px", width: "275px" }}
-                    />
-                    <CardContent>
-                      <Typography sx={{ fontSize: 40 }} color="text.secondary">
-                        Address:
-                        <br />
-                        {house.address}
-                      </Typography>
+        {selectedNumOfRooms.length ? (
+          selectedNumOfRooms.map((house, index) => {
+            counter % 5 === 0 ? (counter = 1) : counter++;
+            return house.address ? (
+              <Grid key={index} sx={{ m: 1 }}>
+                <Card sx={{ minWidth: 275, backgroundColor: colors[index] }}>
+                  <img
+                    src={`/Images/prop${counter}.jpg`}
+                    style={{ height: "100px", width: "275px" }}
+                  />
+                  <CardContent>
+                    <Typography sx={{ fontSize: 40 }} color="text.secondary">
+                      Address:
+                      <br />
+                      {house.address}
+                    </Typography>
+                    <Typography variant="h6" component="div">
+                      Asking Price:
+                      <br />
+                      {house.price}
+                    </Typography>
+                    <Typography variant="h6" component="div">
+                      Square Meters:
+                      <br />
+                      {house.sqm}
+                    </Typography>
+                    <Typography variant="h6" component="div">
+                      Number of rooms:
+                      <br />
+                      {house.num_rooms}
+                    </Typography>
+                    <Typography variant="h6" component="div">
+                      Floor:
+                      <br />
+                      {house.floor}
+                    </Typography>
+                    <Typography variant="h6" component="div">
+                      Number of floors:
+                      <br />
+                      {house.num_floors}
+                    </Typography>
+                    <Typography variant="h6" component="div">
+                      Parking:
+                      <br />
+                      {house.parking}
+                    </Typography>
+                    {house.elevator ? (
                       <Typography variant="h6" component="div">
-                        Asking Price:
+                        Elevator:
                         <br />
-                        {house.price}
+                        {house.elevator}
                       </Typography>
-                      <Typography variant="h6" component="div">
-                        Square Meters:
-                        <br />
-                        {house.sqm}
-                      </Typography>
-                      <Typography variant="h6" component="div">
-                        Number of rooms:
-                        <br />
-                        {house.num_rooms}
-                      </Typography>
-                      <Typography variant="h6" component="div">
-                        Floor:
-                        <br />
-                        {house.floor}
-                      </Typography>
-                      <Typography variant="h6" component="div">
-                        Number of floors:
-                        <br />
-                        {house.num_floors}
-                      </Typography>
-                      <Typography variant="h6" component="div">
-                        Parking:
-                        <br />
-                        {house.parking}
-                      </Typography>
-                      {house.elevator ? (
-                        <Typography variant="h6" component="div">
-                          Elevator:
-                          <br />
-                          {house.elevator}
-                        </Typography>
-                      ) : null}
-                    </CardContent>
-                  </Card>
-                </Grid>
-              ) : (
-                <div>
-                  We are sorry, there are currently no available apartments with
-                  the number of rooms you have stated
-                </div>
-              );
-            })
-          : null}
+                    ) : null}
+                  </CardContent>
+                </Card>
+              </Grid>
+            ) : null;
+          })
+        ) : (
+          <div>
+            We are sorry, there are currently no available apartments with the
+            number of rooms you have stated
+          </div>
+        )}
         <Button variant="contained" component={Link} to="/real-estate">
           Back to main page
         </Button>

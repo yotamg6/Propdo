@@ -11,9 +11,11 @@ const RoomSearch = () => {
 
   const handleChange = (e) => {
     setValue(e.target.value);
-    const selected = houseData.filter(
-      (house) => house.num_rooms === e.target.value
-    );
+    const selected = houseData.filter((house) => {
+      if (house.address) {
+        return house.num_rooms === e.target.value;
+      }
+    });
 
     setSelectedNumOfRooms(selected);
     navigate("/selected-rooms");
