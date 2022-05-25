@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, Typography, Grid, Button } from "@mui/material";
 import { AppContext } from "../App";
-
+let counter = 0;
 const SelectedRooms = () => {
   const { selectedNumOfRooms } = useContext(AppContext);
   const colors = [
@@ -17,8 +17,6 @@ const SelectedRooms = () => {
     "#F02475",
     "#3B2D38",
     "#D1E751",
-    "#FFFFFF",
-    "#000000",
     "#4DBCE9",
     "#26ADE4",
     "#FF9900",
@@ -40,11 +38,24 @@ const SelectedRooms = () => {
         container
         sx={{ m: 1 }}
       >
+        <img
+          src="/logo-propdo.jpeg"
+          style={{
+            height: "70px",
+            width: "100px",
+            margin: "10px",
+          }}
+        />
         {selectedNumOfRooms.length
           ? selectedNumOfRooms.map((house, index) => {
+              counter % 5 === 0 ? (counter = 1) : counter++;
               return house.address ? (
                 <Grid key={index} sx={{ m: 1 }}>
                   <Card sx={{ minWidth: 275, backgroundColor: colors[index] }}>
+                    <img
+                      src={`/Images/prop${counter}.jpg`}
+                      style={{ height: "100px", width: "275px" }}
+                    />
                     <CardContent>
                       <Typography sx={{ fontSize: 40 }} color="text.secondary">
                         Address:

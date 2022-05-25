@@ -25,7 +25,6 @@ const RoomSearch = () => {
       const sortedNumOfRooms = allNumOfRooms.sort();
       const uniqueNumOfRooms = new Set(sortedNumOfRooms);
       const arrOfNumRooms = [...uniqueNumOfRooms];
-      //   console.log("arrOfNumRooms", arrOfNumRooms);
       setNumOfRooms(arrOfNumRooms);
     }
   }, [houseData]);

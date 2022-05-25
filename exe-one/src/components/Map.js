@@ -1,5 +1,3 @@
-import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
-import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
 import React, { useState, useEffect, useRef } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import mapboxgl from "mapbox-gl";

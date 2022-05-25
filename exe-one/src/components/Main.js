@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { AppContext } from "../App";
 import { Card, CardContent, Typography, Grid } from "@mui/material";
 import AddressSearch from "./AddressSearch";
 import RoomSearch from "./RoomSearch";
-
+let counter = 0;
 const Main = () => {
   const { houseData } = useContext(AppContext);
   const palette = [
@@ -72,6 +72,14 @@ const Main = () => {
   return (
     <>
       <Grid alignItems="center" justifyContent="center" container sx={{ m: 1 }}>
+        <img
+          src="/logo-propdo.jpeg"
+          style={{
+            height: "70px",
+            width: "100px",
+            margin: "10px",
+          }}
+        />
         <AddressSearch />
         <RoomSearch />
       </Grid>
@@ -83,13 +91,12 @@ const Main = () => {
       >
         {houseData.length
           ? houseData.map((house, index) => {
+              counter % 5 === 0 ? (counter = 1) : counter++;
               return house.address ? (
                 <Grid key={index} sx={{ m: 1 }}>
                   <Card sx={{ minWidth: 275, backgroundColor: palette[index] }}>
                     <img
-                      src={`/Images/prop${
-                        Math.floor(Math.random() * 5) + 1
-                      }.jpg`}
+                      src={`/Images/prop${counter}.jpg`}
                       style={{ height: "100px", width: "275px" }}
                     />
                     <CardContent>

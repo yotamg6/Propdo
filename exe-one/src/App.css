@@ -1,6 +1,7 @@
 body {
   background: url("skyscrapers.jpg") no-repeat center center fixed;
 }
+
 .App {
   text-align: center;
 }
@@ -32,7 +33,7 @@ body {
 }
 
 .map-container {
-  height: 100rem;
+  height: 100vh;
 }
 
 .sidebar {
@@ -62,7 +63,6 @@ body {
 }
 
 .latitudeBar {
-  /* background-color: rgba(35, 55, 75, 0.9); */
   color: black;
   padding: 6px 12px;
   font-family: monospace;
